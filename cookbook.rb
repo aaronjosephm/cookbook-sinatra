@@ -11,7 +11,7 @@ class Cookbook
     tmp.each do |e|
       difficulty = ""
       difficulty = /\w+\:\s(\w+\s\w+|\w+)/.match(e[0])[0] unless /\w+\:\s\w+/.match(e[0]).nil?
-      @list << Recipe.new(/\w+\s(\w+|\W)/.match(e[0])[0].gsub(" (", ""), e[1], /\d+/.match(e[0])[0], /\[(\s|\w)/.match(e[0])[0][1], difficulty)
+      @list << Recipe.new(/(\w+|\w+\'\w)\s(\w+|\W)/.match(e[0])[0].gsub(" (", ""), e[1], /\d+/.match(e[0])[0], /\[(\s|\w)/.match(e[0])[0][1], difficulty)
     end
     @string_list = []
   end

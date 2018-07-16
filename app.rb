@@ -91,7 +91,8 @@ post '/import' do
   web_import = WebImport.new
   web_import.build(params[:recipe_name])
   @usernames = ["#{web_import.result[0]}", "#{web_import.result[1]}", "#{web_import.result[2]}", "#{web_import.result[3]}", "#{web_import.result[4]}"]
-  session[:message] = @usernames.join("$") + "%" + web_import.result_details.join("$") + "%" + web_import.prep_times.join("$") + "%" + web_import.difficulties.join("$")
+  # session[:message] = @usernames.join("$") + "%" + web_import.result_details.join("$") + "%" + web_import.prep_times.join("$") + "%" + web_import.difficulties.join("$")
+  session[:message] = @usernames.join("$") + "%" + web_import.result_details.first(5).join("$") + "%" + web_import.prep_times.first(5).join("$") + "%" + web_import.difficulties.first(5).join("$")
   # session[:result_details] = web_import.result_details.join("/")
   # session[:prep_times] = web_import.prep_times.join("/")
   # session[:difficulties] = web_import.difficulties.join("/")
@@ -102,9 +103,8 @@ end
 post '/importList' do
   csv_file   = File.join(__dir__, 'recipes.csv')
   cookbook   = Cookbook.new(csv_file)
-
   result_string = session[:message]
-  session[:message] = ""
+  # session[:message] = ""
   result = result_string.split("%")[0].split("$")
   result_details = result_string.split("%")[1].split("$")
   prep_times = result_string.split("%")[2].split("$")
