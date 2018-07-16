@@ -63,7 +63,7 @@ end
 post '/new' do
   csv_file   = File.join(__dir__, 'recipes.csv')
   cookbook   = Cookbook.new(csv_file)
-  recipe = Recipe.new(params[:recipe_name], params[:recipe_description], params[:prep_time], " ", "difficulty: #{params[:difficulty]}")
+  recipe = Recipe.new(params[:recipe_name], params[:recipe_description], params[:prep_time], " ", params[:difficulty])
   cookbook.add_recipe(recipe)
   @usernames = cookbook.string_list
   redirect "/list"
@@ -110,7 +110,7 @@ post '/importList' do
   prep_times = result_string.split("%")[2].split("$")
   difficulties = result_string.split("%")[3].split("$")
   import_recipe = params[:recipe_index]
-  cookbook.add_import(result[import_recipe.to_i - 1], result_details[import_recipe.to_i - 1], prep_times[import_recipe.to_i - 1], "difficulty: #{difficulties[import_recipe.to_i - 1]}")
+  cookbook.add_import(result[import_recipe.to_i - 1], result_details[import_recipe.to_i - 1], prep_times[import_recipe.to_i - 1], difficulties[import_recipe.to_i - 1])
   @usernames = [""]
   # redirect "/import"
   redirect "/list"
