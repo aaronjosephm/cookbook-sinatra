@@ -64,16 +64,18 @@
 
 
 
-
-
+    <div class="shadow-lg p-3 mb-5 bg-white rounded">
+    <div class="d-flex justify-content-around">
     <div class="d-flex flex-row bd-highlight mb-3">
       <div class="align-self-center">
-        <div class="p-2 bd-highlight"><img src="alex.jpg" class="img-fluid" width="600" alt="Responsive image"></div>
+        <div class="p-5 bd-highlight"><img src="alex.jpg" class="img-fluid" width="600" alt="Responsive image"></div>
     </div>
     <div class="align-self-center">
-      <div class="p-2 bd-highlight"><img src="casey.jpg" class="img-fluid" width="600" alt="Responsive image"></div>
+      <div class="p-5 bd-highlight"><img src="casey.jpg" class="img-fluid" width="600" alt="Responsive image"></div>
     </div>
     </div>
+  </div>
+</div>
 
     <div class="shadow p-3 mb-5 rounded">
     <div class="jumbotron jumbotron-fluid">
@@ -84,14 +86,18 @@
     </div>
   </div>
 
+    <div class="shadow-lg p-3 mb-5 bg-white rounded">
+    <div class="d-flex justify-content-around">
     <div class="d-flex flex-row bd-highlight mb-3">
       <div class="align-self-center">
-        <div class="p-2 bd-highlight"><img src="joseph.jpg" class="img-fluid" width="600" alt="Responsive image"></div>
+        <div class="p-5 bd-highlight"><img src="joseph.jpg" class="img-fluid" width="600" alt="Responsive image"></div>
     </div>
     <div class="align-self-center">
-      <div class="p-2 bd-highlight"><img src="monika.jpg" class="img-fluid" width="600" alt="Responsive image"></div>
+      <div class="p-5 bd-highlight"><img src="monika.jpg" class="img-fluid" width="600" alt="Responsive image"></div>
     </div>
     </div>
+  </div>
+</div>
 
     <div class="shadow p-3 mb-5 rounded">
     <div class="jumbotron jumbotron-fluid">
@@ -102,14 +108,21 @@
     </div>
   </div>
 
+
+  <div class="d-flex justify-content-around">
   <div class="d-flex flex-row bd-highlight mb-3">
+    <div class="shadow-lg p-3 mb-5 bg-white rounded">
       <div class="align-self-center">
-        <div class="p-2 bd-highlight"><img src="food.jpg" class="img-fluid" width="600" alt="Responsive image"></div>
+        <div class="p-5 bd-highlight"><img src="food.jpg" class="img-fluid" width="600" alt="Responsive image"></div>
     </div>
+  </div>
+    <div class="shadow-lg p-3 mb-5 bg-white rounded">
     <div class="align-self-center">
-      <div class="p-2 bd-highlight"><img src="robin.jpg" class="img-fluid" width="600" alt="Responsive image"></div>
+      <div class="p-5 bd-highlight"><img src="robin.jpg" class="img-fluid" width="600" alt="Responsive image"></div>
     </div>
     </div>
+    </div>
+  </div>
 
 
     <div class="shadow p-3 mb-5 rounded">
@@ -121,77 +134,23 @@
     </div>
   </div>
 
-    <div class="list-group">
+    <div class="d-flex justify-content-around">
+
+    <div class="list-group" style="width: 130rem;">
 
 
-      <a href="#" class="list-group-item list-group-item-action active">
+      <h1><a href="#" class="list-group-item list-group-item-action active">
         Welcome to the coolest friggin cookbook!!!!!!!!!!!!
-      </a>
-      <a href="list" class="list-group-item list-group-item-action">1 - List all recipes</a>
-      <a href="new" class="list-group-item list-group-item-action">2 - Create a new recipe</a>
-      <a href="destroy" class="list-group-item list-group-item-action">3 - Destroy a recipe</a>
-      <a href="import" class="list-group-item list-group-item-action disabled">4 - Import recipes from LetsCookFrench</a>
-      <a href="mark" class="list-group-item list-group-item-action disabled">5 - Mark recipe as done</a>
+      </a></h1>
+      <h1><a href="list" class="list-group-item list-group-item-action">1 - List all recipes</a></h1>
+      <h1><a href="new" class="list-group-item list-group-item-action">2 - Create a new recipe</a></h1>
+      <h1><a href="destroy" class="list-group-item list-group-item-action">3 - Destroy a recipe</a></h1>
+      <h1><a href="import" class="list-group-item list-group-item-action disabled">4 - Import recipes from LetsCookFrench</a></h1>
+      <h1><a href="mark" class="list-group-item list-group-item-action disabled">5 - Mark recipe as done</a></h1>
     </div>
-    <%= yield %>
-  <!--   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Dropdown link
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <div class="list-group">
-      <a href="#" class="list-group-item list-group-item-action active">
-        Welcome to the coolest friggin cookbook!!!!!!!!!!!!
-      </a>
-      <a href="#Current recipes" class="list-group-item list-group-item-action">1 - List all recipes</a>
-      <a href="new" class="list-group-item list-group-item-action">2 - Create a new recipe</a>
-      <a href="#" class="list-group-item list-group-item-action">3 - Destroy a recipe</a>
-      <a href="#" class="list-group-item list-group-item-action disabled">4 - Import recipes from LetsCookFrench</a>
-      <a href="#" class="list-group-item list-group-item-action disabled">5 - Mark recipe as done</a>
     </div>
 
-
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-8 col-sm-offset-2">
-          <p class="h1">
-            Current recipes: <em>(MMMMMMMMMMMMMMMMMM)</em>!
-          </p>
-          <%= Time.now %>
-          <% @usernames.each do |username| %>
-            <li>
-              <%= username %>
-            </li>
-          <% end %>
-        </div>
-      </div>
-    </div>
- -->
+       <%= yield %>
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

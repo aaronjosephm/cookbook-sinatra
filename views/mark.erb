@@ -13,26 +13,23 @@
   </head>
   <body> -->
 
-    <p>
-      I'm in a <em>view</em>!
-    </p>
-    <%= Time.now %>
-
-    <% @usernames.each do |username| %>
-      <li>
-        <%= username %>
-      </li>
-    <% end %>
-
     <form action="mark" method="post">
     <div class="form-group">
-      <label for="exampleFormControlInput1">Please enter the recipe index you would like to mark as done</label>
+      <h1><label for="exampleFormControlInput1">Please enter the recipe index you would like to mark as done</label></h1>
       <input name="recipe_index" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Recipe index">
         </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary btn-lg btn-block"><h1>Submit</h1></button>
     </form>
 
-
+    <div class="card" style="width: 130rem;">
+      <ul class="list-group list-group-flush">
+        <% @usernames.each do |username| %>
+        <li class="list-group-item">
+          <h3><%= username %></h3>
+        </li>
+        <% end %>
+      </ul>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

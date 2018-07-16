@@ -15,17 +15,23 @@
 
     <form action="import" method="post">
     <div class="form-group">
-      <label for="exampleFormControlInput1">Which recipe would you like to import from LetsCookFrench?</label>
+      <h1><label for="exampleFormControlInput1">Which recipe would you like to import from LetsCookFrench?</label></h1>
       <input name="recipe_name" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Recipe name">
         </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary btn-lg btn-block"><h1>Submit</h1></button>
     </form>
 
-    <% @usernames.each_with_index do |username| %>
-      <li>
-        <%= username %>
-      </li>
-    <% end %>
+
+    <div class="card" style="width: 130rem;">
+      <ul class="list-group list-group-flush">
+        <% @usernames.each do |username| %>
+        <li class="list-group-item">
+          <h3><%= username %></h3>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+
 
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

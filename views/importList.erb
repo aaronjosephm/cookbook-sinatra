@@ -12,20 +12,24 @@
     <link rel="stylesheet" href="/application.css">
   </head>
   <body> -->
-    <ol>
-    <% @usernames.each do |username| %>
-      <li>
-        <%= username %>
-      </li>
-    <% end %>
-    </ol>
+
+    <div class="card" style="width: 130rem;">
+      <ol class="list-group list-group-flush">
+        <% @usernames.each_with_index do |username, index| %>
+        <ol class="list-group-item">
+          <h3><%= (index + 1).to_s + " - " + username %></h3>
+        </ol>
+        <% end %>
+      </ol>
+    </div>
+
 
     <form action="importList" method="post">
     <div class="form-group">
-      <label for="exampleFormControlInput1">Which recipe would you like to add?</label>
-      <input name="recipe_index" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Recipe index">
+      <h1><label for="exampleFormControlInput1">Which recipe would you like to add?</label></h1>
+      <input name="recipe_index" web_import="@web_import" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Recipe index">
         </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary btn-lg btn-block"><h1>Submit</h1></button>
     </form>
 
 

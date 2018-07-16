@@ -1,10 +1,11 @@
-<p>
-  I'm in a <em>view</em>!
-</p>
-<%= Time.now %>
 
-<% @usernames.each do |username| %>
-  <li>
-    <%= username %>
-  </li>
-<% end %>
+<div class="card" style="width: 130rem;">
+  <ul class="list-group list-group-flush">
+    <% @usernames.each do |username| %>
+    <li class="list-group-item">
+      <h3><%= username %></h3>
+    </li>
+    <% end %>
+  </ul>
+</div>
+
