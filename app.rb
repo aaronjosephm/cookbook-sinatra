@@ -23,36 +23,38 @@ end
 
 get '/match' do
   @result = session[:message].split("%")
+  if @result[6] == "Me"
+    @result[6] = "Anonymous"
+  end
   erb :match
 end
 
-post '/match' do
-  puts "matched"
-  url = "https://www.pof.com/viewprofile.aspx?profile_id=188544953"
-  html_file = open(url).read
-  doc = Nokogiri::HTML(html_file)
-  attributes = {}
-  puts "age: " + doc.search('#age').text
-  puts "ethnicity " + doc.search('#ethnicity').text
-  puts "height: " + doc.search('#height').text.split('"')[0]
-  puts "body type: " + doc.search('#body').text
-  attributes[:age] = doc.search('#age').text
-  web_profile = WebImport.new
-  result_hash = web_profile.build
-  puts attributes
-  @result = session[:message]
-  erb :match
-end
+# post '/match' do
+#   puts "matched"
+#   url = "https://www.pof.com/viewprofile.aspx?profile_id=188544953"
+#   html_file = open(url).read
+#   doc = Nokogiri::HTML(html_file)
+#   attributes = {}
+#   puts "age: " + doc.search('#age').text
+#   puts "ethnicity " + doc.search('#ethnicity').text
+#   puts "height: " + doc.search('#height').text.split('"')[0]
+#   puts "body type: " + doc.search('#body').text
+#   attributes[:age] = doc.search('#age').text
+#   web_profile = WebImport.new
+#   result_hash = web_profile.build
+#   puts attributes
+#   @result = session[:message]
+#   erb :match
+# end
 
 post '/' do
   # profile = Profile.new(params[:age], params[:ethnicity], params[:height], params[:body_type])
   # web_profile = WebImport.new
   # result_hash = web_profile.build
-  session[:message] = params[:age] + "%" + params[:ethnicity] + "%" + params[:height] + "%" + params[:body_type]
   web_profile = WebImport.new
-  profiles = web_profile.random_select
-  this_profile = profiles[0]
-  session[:message] = this_profile.age + "%" + this_profile.ethnicity + "%" + this_profile.height + "%" + this_profile.body_type + "%" + this_profile.url + "%" + this_profile.picture
+  web_profile.random_select
+  the_profile = web_profile.filter(age: params[:age], ethnicity: params[:ethnicity], height: params[:height], body_type: params[:body_type])
+  session[:message] = the_profile.age + "%" + the_profile.ethnicity + "%" + the_profile.height + "%" + the_profile.body_type + "%" + the_profile.url + "%" + the_profile.picture + "%" + the_profile.name
   puts "GOT HERE YOU SON OF A BITCHHHHHHHHH!!!!!!!!!!!!!!!!!!"
   redirect "/match"
 end

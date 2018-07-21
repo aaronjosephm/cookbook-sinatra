@@ -15,7 +15,7 @@
       <div class="card" style="width: 25rem;">
   <img class="card-img-top" src=<%="#{@result[5]}"%> alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title">Name</h5>
+    <h5 class="card-title"><%="#{@result[6]}"%></h5>
     <p class="card-text" style="font-family: Helvetica"><a href=<%="#{@result[4]}"%>>Go to profile</a></p>
   </div>
   <ul class="list-group list-group-flush">
@@ -34,4 +34,7 @@
     </div>
   </div>
 </div>
+<form action="/" method="get">
+<button action="/" method="get" type="submit" class="btn btn-danger btn-lg btn-block"><h2>Try again!</h2></button>
+</form>
 </div>
