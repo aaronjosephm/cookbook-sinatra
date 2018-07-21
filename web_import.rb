@@ -1,5 +1,6 @@
 require "nokogiri"
 require "open-uri"
+require_relative "profile"
 
 class WebImport
   attr_reader :result, :result_details, :prep_times, :difficulties
@@ -9,6 +10,31 @@ class WebImport
     @result_details = []
     @prep_times = []
     @difficulties = []
+  end
+
+  def random_select(attributes = {})
+    url = "https://www.pof.com"
+    html_file = open(url).read
+    doc = Nokogiri::HTML(html_file)
+    # contains 4 profile links.
+    links = []
+    profiles = []
+    doc.css('div.profile-card-right a').each { |link| links << link['href'] if link['href'][0] == "v" }
+    links.each do |link|
+      url = url + "/" + link
+      tmp_html_file = open(url).read
+      tmp_doc = Nokogiri::HTML(tmp_html_file)
+      attributes = {}
+      attributes[:age] = tmp_doc.search('#age').text
+      attributes[:ethnicity] = tmp_doc.search('#ethnicity').text
+      attributes[:height] = tmp_doc.search('#height').text.split('"')[0]
+      attributes[:body_type] = tmp_doc.search('#body').text
+      attributes[:url] = url
+      attributes[:picture] = tmp_doc.search('#mp').attr('src').value
+      profiles << Profile.new(attributes)
+    end
+    puts profiles
+    profiles
   end
 
   def build(attributes = {})

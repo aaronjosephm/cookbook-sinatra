@@ -22,7 +22,7 @@ get '/' do
 end
 
 get '/match' do
-  @result = session[:message]
+  @result = session[:message].split("%")
   erb :match
 end
 
@@ -49,6 +49,10 @@ post '/' do
   # web_profile = WebImport.new
   # result_hash = web_profile.build
   session[:message] = params[:age] + "%" + params[:ethnicity] + "%" + params[:height] + "%" + params[:body_type]
+  web_profile = WebImport.new
+  profiles = web_profile.random_select
+  this_profile = profiles[0]
+  session[:message] = this_profile.age + "%" + this_profile.ethnicity + "%" + this_profile.height + "%" + this_profile.body_type + "%" + this_profile.url + "%" + this_profile.picture
   puts "GOT HERE YOU SON OF A BITCHHHHHHHHH!!!!!!!!!!!!!!!!!!"
   redirect "/match"
 end

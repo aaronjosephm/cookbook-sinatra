@@ -1,8 +1,37 @@
-
+<!--
 <div class="card" style="width: 130rem;">
   <ul class="list-group list-group-flush">
     <li class="list-group-item">
-      <h3><%= @result %></h3>
+      <h3><%= "\n ethnicity: #{@result[1]}\n height: #{@result[2]}\n body type: #{@result[3]}" %></h3>
     </li>
   </ul>
+</div> -->
+<div class="shadow p-3 mb-5 bg-white rounded">
+<div class="container" style="margin-bottom: 100px">
+  <div class="row">
+    <div class="col">
+    </div>
+    <div class="col">
+      <div class="card" style="width: 25rem;">
+  <img class="card-img-top" src=<%="#{@result[5]}"%> alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Name</h5>
+    <p class="card-text" style="font-family: Helvetica"><a href=<%="#{@result[4]}"%>>Go to profile</a></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item"><%="age: #{@result[0]}"%></li>
+    <li class="list-group-item"><%="ethnicity: #{@result[1]}"%></li>
+    <li class="list-group-item"><%="height: #{@result[2]}"%></li>
+    <li class="list-group-item"><%="body type: #{@result[3]}"%></li>
+  </ul>
+  <div class="card-body">
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+    </div>
+    </div>
+    <div class="col">
+    </div>
+  </div>
+</div>
 </div>
