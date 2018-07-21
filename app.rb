@@ -1,10 +1,13 @@
 require_relative 'cookbook'
 require_relative 'recipe'
 require_relative 'web_import'
+require_relative 'profile'
 require "sinatra"
 require "sinatra/reloader" if development?
 require "pry-byebug"
 require "better_errors"
+require "nokogiri"
+require "open-uri"
 
 set :bind, '0.0.0.0'
 enable :sessions
@@ -15,49 +18,39 @@ configure :development do
 end
 
 get '/' do
-  csv_file   = File.join(__dir__, 'recipes.csv')
-  cookbook   = Cookbook.new(csv_file)
-  cookbook.all
-  @usernames = cookbook.string_list
   erb :index
 end
 
-get '/new' do
-  csv_file   = File.join(__dir__, 'recipes.csv')
-  cookbook   = Cookbook.new(csv_file)
-  @usernames = cookbook.string_list
-  erb :new
+get '/match' do
+  @result = session[:message]
+  erb :match
 end
 
-get '/list' do
-  csv_file   = File.join(__dir__, 'recipes.csv')
-  cookbook   = Cookbook.new(csv_file)
-  cookbook.all
-  @usernames = cookbook.string_list
-  erb :list
+post '/match' do
+  puts "matched"
+  url = "https://www.pof.com/viewprofile.aspx?profile_id=188544953"
+  html_file = open(url).read
+  doc = Nokogiri::HTML(html_file)
+  attributes = {}
+  puts "age: " + doc.search('#age').text
+  puts "ethnicity " + doc.search('#ethnicity').text
+  puts "height: " + doc.search('#height').text.split('"')[0]
+  puts "body type: " + doc.search('#body').text
+  attributes[:age] = doc.search('#age').text
+  web_profile = WebImport.new
+  result_hash = web_profile.build
+  puts attributes
+  @result = session[:message]
+  erb :match
 end
 
-get '/destroy' do
-  csv_file   = File.join(__dir__, 'recipes.csv')
-  cookbook   = Cookbook.new(csv_file)
-  cookbook.all
-  @usernames = cookbook.string_list
-  erb :destroy
-end
-
-get '/import' do
-  csv_file   = File.join(__dir__, 'recipes.csv')
-  cookbook   = Cookbook.new(csv_file)
-  @usernames = cookbook.string_list
-  erb :import
-end
-
-get '/mark' do
-  csv_file   = File.join(__dir__, 'recipes.csv')
-  cookbook   = Cookbook.new(csv_file)
-  cookbook.all
-  @usernames = cookbook.string_list
-  erb :mark
+post '/' do
+  # profile = Profile.new(params[:age], params[:ethnicity], params[:height], params[:body_type])
+  # web_profile = WebImport.new
+  # result_hash = web_profile.build
+  session[:message] = params[:age] + "%" + params[:ethnicity] + "%" + params[:height] + "%" + params[:body_type]
+  puts "GOT HERE YOU SON OF A BITCHHHHHHHHH!!!!!!!!!!!!!!!!!!"
+  redirect "/match"
 end
 
 post '/new' do
