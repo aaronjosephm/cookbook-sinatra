@@ -13,35 +13,15 @@
   </head>
   <body>
 
-
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Random matcher</a>
+  <div class="shadow p-3 mb-5 bg-white rounded">
+  <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+    <a class="navbar-brand" href="#" style="color: white">Random matcher</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -49,23 +29,42 @@
     </form>
   </div>
   </nav>
+</div>
 
-     <div class="shadow-lg p-3 mb-5 bg-white rounded">
+     <!-- <div class="shadow-lg p-3 mb-5 bg-white rounded">
         <div class="align-self-center">
-          <img src="love.jpg" class="img-fluid" alt="Responsive image" style="opacity: 0.5;" height="50%">
+          <img src="love.jpg" class="img-fluid" alt="Responsive image" style="opacity: 0.5; margin-left: 15em" height="50%">
           <div class="centered" style="position: absolute; text-align: center; font-size: large; top: 50%; font-family: 'Brush Script MT', cursive; font-style: normal; color: black; line-height: 100px; font-weight: 500;">
-            <h1 style="font-size: 100px; margin-left: 300px;">Random Matcher</h1>
-            <p style="font-size: 50px; margin-left: 300px; margin-top: 100px;">"Find your other half"</p>
+            <h1 style="font-size: 100px; margin-left: 4em;">Random Matcher</h1>
+            <p style="font-size: 50px; margin-left: 8em; margin-top: 100px;">"Find your other half"</p>
+        </div>
+      </div>
+    </div> -->
+
+    <div class="shadow p-3 mb-5 bg-white rounded">
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="shadow-lg p-3 mb-5 bg-white rounded">
+        <div class="align-self-center">
+          <img src="love.jpg" class="img-fluid" alt="Responsive image" style="opacity: 0.5;" height="100%">
+          <div class="centered" style="position: absolute; text-align: center; font-size: large; top: 50%; font-family: 'Brush Script MT', cursive; font-style: normal; color: black; line-height: 100px; font-weight: 500;">
+            <h1 style="font-size: 100px; margin-left: 2.5em;">Random Matcher</h1>
+            <p style="font-size: 50px; margin-left: 5em; margin-top: 100px;">"Find your other half"</p>
         </div>
       </div>
     </div>
+    </div>
+  </div>
+</div>
+</div>
 
 
 
-    <div class="jumbotron jumbotron-fluid" style="background-color: #98e2fb">
+    <div class="jumbotron jumbotron-fluid" style="background-color: #3383FF">
       <div class="container">
-        <h1 class="display-4">Enter in the fields</h1>
-        <p class="lead">Fill out the description of the partner you're looking for.</p>
+        <h1 class="display-4" style="color: white">Enter in the fields...</h1>
+        <p class="lead" style="font-family: Helvetica">Fill out the description of the partner you're looking for:</p>
       </div>
     </div>
 
@@ -83,17 +82,83 @@
     <form action="/" method="post">
     <div class="form-group col-md-6" width="600">
     <h2><label for="exampleFormControlInput1">Age</label></h2>
-    <input name="age" type="text" class="form-control" id="exampleFormControlInput1" placeholder="age" width="300">
+    <input name="age" type="text" class="form-control form-control-lg" id="exampleFormControlInput1" placeholder="age" width="300">
     <h2><label for="exampleFormControlInput1">Ethnicity</label></h2>
-    <input name="ethnicity" type="text" class="form-control" id="exampleFormControlInput1" placeholder="caucasian, hispanic, African-American, etc.">
+    <select name="ethnicity" type="text" class="form-control form-control-lg" id="exampleFormControlInput1" placeholder="caucasian, hispanic, African-American, etc.">
+      <option>Caucasian</option>
+      <option>African American</option>
+      <option>Hispanic</option>
+      <option>Asian</option>
+      <option>Pacific Islander</option>
+      <option>Middle Eastern</option>
+      <option>Indian</option>
+      <option>Native American</option>
+      <option>Mixed</option>
+      <option>Other</option>
+    </select>
     <h2><label for="exampleFormControlInput1">height</label></h2>
-    <input name="height" type="text" class="form-control" id="exampleFormControlInput1" placeholder="in ft.">
+    <select name="height" type="text" class="form-control form-control-lg" id="exampleFormControlInput1" placeholder="in ft.">
+      <option>4' 10</option>
+      <option>4' 11</option>
+      <option>5' 0</option>
+      <option>5' 1</option>
+      <option>5' 2</option>
+      <option>5' 3</option>
+      <option>5' 4</option>
+      <option>5' 5</option>
+      <option>5' 6</option>
+      <option>5' 7</option>
+      <option>5' 8</option>
+      <option>5' 9</option>
+      <option>5' 10</option>
+      <option>5' 11</option>
+      <option>6' 0</option>
+      <option>6' 1</option>
+      <option>6' 2</option>
+      <option>6' 3</option>
+      <option>6' 4</option>
+      <option>6' 5</option>
+      <option>6' 6</option>
+    </select>
     <h2><label for="exampleFormControlInput1">body type</label></h2>
-    <input name="body_type" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Athletic, body-builder, skinny, etc.">
+    <select name="body_type" type="text" class="form-control form-control-lg" id="exampleFormControlInput1" placeholder="Athletic, body-builder, skinny, etc.">
+      <option>Athletic body type</option>
+      <option>Skinny body type</option>
+      <option>A Few Extra Pounds body type</option>
+      <option>Average body type</option>
+      <option>Prefer Not To Say body type</option>
+      <option>Thin body type</option>
+    </select>
       </div>
     <button type="submit" class="btn btn-primary btn-lg btn-block"><h2>Find Match!</h2></button>
     </form>
   </div>
+
+
+<!--   <button action="/" method="post" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  Launch demo modal
+</button>
+
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div> -->
 
   <%= yield %>
 
