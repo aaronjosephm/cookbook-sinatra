@@ -44,6 +44,7 @@ class WebImport
       attributes[:url] = url
       attributes[:picture] = tmp_doc.search('#mp').attr('src').value
       attributes[:name] = tmp_doc.search('#username').text
+      attributes[:interests] = tmp_doc.search('#profile-interests-wrapper').text.split(" ")
       puts tmp_doc.search('#age').text
       @profiles << Profile.new(attributes)
     end

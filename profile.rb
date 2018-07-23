@@ -1,5 +1,5 @@
 class Profile
-  attr_reader :age, :ethnicity, :height, :body_type, :url, :picture, :name
+  attr_reader :age, :ethnicity, :height, :body_type, :url, :picture, :name, :interests
   attr_accessor :points
 
   def initialize(attributes = {})
@@ -10,6 +10,7 @@ class Profile
     @url = attributes[:url]
     @picture = attributes[:picture]
     @name = attributes[:name]
+    @interests = attributes[:interests]
     @points = 0
   end
 end
