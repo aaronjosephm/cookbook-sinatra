@@ -54,6 +54,7 @@ post '/' do
   web_profile = WebImport.new
   web_profile.random_select
   the_profile = web_profile.filter(age: params[:age], ethnicity: params[:ethnicity], height: params[:height], body_type: params[:body_type])
+  puts params[:interests]
   session[:message] = the_profile.age + "%" + the_profile.ethnicity + "%" + the_profile.height + "%" + the_profile.body_type + "%" + the_profile.url + "%" + the_profile.picture + "%" + the_profile.name
   puts params[:ethnicity]
   redirect "/match"
